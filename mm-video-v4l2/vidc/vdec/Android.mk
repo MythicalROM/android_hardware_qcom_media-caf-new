@@ -111,11 +111,6 @@ libmm-vdec-inc      += frameworks/av/include/media/stagefright
 libmm-vdec-inc      += $(TARGET_OUT_HEADERS)/mm-video/SwVdec
 libmm-vdec-inc      += $(TARGET_OUT_HEADERS)/qcom/display-caf-new/
 
-ifneq ($(call is-platform-sdk-version-at-least, 19),true)
-libOmxVdec-def += -DMETADATA_FOR_DYNAMIC_MODE
-libmm-vdec-inc += hardware/qcom/media-caf-new/libstagefrighthw
-endif
-
 ifeq ($(call is-platform-sdk-version-at-least, 19),true)
 # This feature is enabled for Android KK+
 libOmxVdec-def += -DADAPTIVE_PLAYBACK_SUPPORTED
